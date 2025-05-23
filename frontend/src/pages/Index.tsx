@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import ProfileSection from '../components/ProfileSection';
-import LocationAndTechSection from '../components/LocationAndTechSection';
 import ResumeAndExperienceSection from '../components/ResumeAndExperienceSection';
 import ProjectsGrid from '../components/ProjectsGrid';
 import BackgroundAnimation from '../components/BackgroundAnimation';
+import imageP1 from '../assets/images/p1.png';
+import imageP2 from '../assets/images/P2.png'; // Corrected case for P2
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('All');
@@ -18,52 +19,53 @@ const Index = () => {
   const projects = [
     {
       id: 1,
-      title: "STATION UI - COMPONENT LIBRARY",
-      description: "Design System",
-      tags: ["100+ Components", "Storybook", "TypeScript", "SCSS"],
-      image: "/assets/images/project1.png",
-      company: "TERRAFORM LABS"
+      title: "YALLAGOMOROCCO - Smart Travel Platform powered by AI",
+      description: "Fullstack - Microservices Architecture",
+      tags: ["MERN stack", "GraphQL", "RAG","Fine-tuning"],
+      image: imageP1,
+      company: "YGM"
+
     },
     {
       id: 2,
-      title: "ALLIANCE DAO NFT SITE",
-      description: "Frontend",
-      tags: ["React", "TypeScript", "Figma", "SCSS"],
-      image: "/assets/images/project2.png",
-      company: "TERRAFORM LABS"
+      title: "BDE ENSI TANGIER",
+      description: "Fullstack - Web App",
+      tags: ["React", "Flask","RESTAPI", "PostgreSQL", "CSS"],
+      image: imageP2,
+      company: "ENSI Tangier"
     },
     {
       id: 3,
-      title: "STATION LANDING PAGE",
-      description: "Solo Developer",
-      tags: ["NextJS", "TypeScript", "Figma", "SCSS"],
-      image: "/assets/images/project3.png",
-      company: "TERRAFORM LABS"
+      title: "ARTZEUM - Digital Art Museum",
+      description: "Fullstack - Mobile App",
+      tags: ["MAUI",".NET","RESTAPI", "Cloudinary", "MySQL"],
+      image: imageP1,
+      company: "RASS.AI LABS"
     },
     {
       id: 4,
-      title: "STATION SETUP PAGE",
-      description: "Solo Developer",
-      tags: ["NextJS", "JavaScript", "Figma", "SCSS"],
-      image: "/assets/images/project4.png",
-      company: "TERRAFORM LABS"
+      title: "Eventsfinder - smart approach to find events near of you",
+      description: "Fullstack - Web/Mobile App",
+      tags: ["NestJS", "Angular", "GraphQL", "SCSS"],
+      image: imageP2,
+      company: "YGM"
     },
     {
       id: 5,
-      title: "DEVELOPER PAGE FOR TERRA",
-      description: "Frontend + Design",
-      tags: ["React", "TypeScript", "SCSS"],
-      image: "/assets/images/project5.png",
-      company: "TERRAFORM LABS"
+      title: "AI & ML",
+      description: "FullStack - Web/Mobile App",
+      tags: ["Angular", "Microservices", "AI & ML"],
+      image: imageP1,
+      company: "AI & ML"
     },
     {
       id: 6,
-      title: "ALLIANCE LANDING",
-      description: "Frontend + Design",
-      tags: ["React", "TypeScript", "SCSS"],
-      image: "/assets/images/project6.png",
-      company: "TERRAFORM LABS"
-    }
+      title: "AI & ML",
+      description: "FullStack - Web/Mobile App",
+      tags: ["Angular", "Microservices", "AI & ML"],
+      image: imageP2,
+      company: "AI & ML"
+    },
   ];
 
   const experiences: {
@@ -73,32 +75,23 @@ const Index = () => {
     type: 'current' | 'past';
   }[] = [
     {
-      role: "Web Developer",
-      company: "Terraform Labs",
-      period: "2022 - Present",
+      role: "Student Software Engineer",
+      company: "School of New Sciences and Engineering",
+      period: "2023 - Present",
       type: "current"
     },
     {
-      role: "Software Engineer",
-      company: "Verb Inc",
-      period: "2019 - 2022",
+      role: "Renewable Energy Master Degree",
+      company: "Faculty of Sciencesn-Kenitra",
+      period: "2017 - 2020",
       type: "past"
     },
-    {
-      role: "Jr Front-End Engineer",
-      company: "PNI Digital Media",
-      period: "2017 - 2019",
-      type: "past"
-    },
-    {
-      role: "Software Engineer",
-      company: "Factom Inc",
-      period: "2018 - 2019",
-      type: "past"
-    }
+
+
   ];
 
   // Don't render until after hydration
+
   if (!mounted) return null;
   
   return (
@@ -109,16 +102,19 @@ const Index = () => {
       <div className="relative z-10 container mx-auto px-6 py-8">
         <Header activeTab={activeTab} setActiveTab={setActiveTab} />
 
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {/* Left Column */}
-          <ProfileSection />
+        {/* Main Content - Top Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-4">
+          
+          {/* Left Column - Spans 2 */}
+          <div className="lg:col-span-2">
+            <ProfileSection />
+            </div>
 
-          {/* Middle Column */}
-          <LocationAndTechSection />
-
-          {/* Right Column */}
-          <ResumeAndExperienceSection experiences={experiences} />
+          {/* Right Column - Contains the other two sections */}
+          <div className="space-y-6"> {/* This div will be the third column and stack its children */}
+            
+            <ResumeAndExperienceSection experiences={experiences} />
+          </div>
         </div>
 
         {/* Projects Grid */}

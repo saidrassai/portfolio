@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface ProjectCardProps {
@@ -13,9 +12,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tags, ima
   return (
     <div className="backdrop-blur-md bg-white/20 dark:bg-black/20 rounded-3xl overflow-hidden shadow-xl border border-white/30 dark:border-white/10 hover:shadow-2xl transition-all duration-300 group">
       <div className="relative h-48 bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
+        <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-75 transition-opacity duration-300" />
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute bottom-4 left-4 right-4">
-          <div className="text-white text-sm opacity-80 mb-1">PROJECT AT {company}</div>
+        <div className="absolute bottom-4 left-4 right-4 p-4 bg-black/30 backdrop-blur-sm rounded-lg opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+          <div className="text-white text-sm opacity-80 mb-1">{company}</div>
           <h3 className="text-white font-bold text-lg leading-tight">{title}</h3>
         </div>
       </div>

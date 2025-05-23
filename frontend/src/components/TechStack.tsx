@@ -1,36 +1,55 @@
-
 import React from 'react';
 
 const TechStack = () => {
   const technologies = [
-    { name: 'TS', color: 'bg-blue-500', textColor: 'text-white' },
-    { name: 'JS', color: 'bg-yellow-400', textColor: 'text-black' },
-    { name: 'React', color: 'bg-cyan-400', textColor: 'text-white' },
-    { name: 'Next', color: 'bg-black', textColor: 'text-white' },
-    { name: 'Node', color: 'bg-green-600', textColor: 'text-white' },
-    { name: 'Tailwind', color: 'bg-sky-500', textColor: 'text-white' },
+    { name: 'Jira', iconUrl: '/tech-icons/jira.svg' },
+    { name: 'Angular', iconUrl: '/tech-icons/angular-icon.svg' },
+    { name: 'AWS', iconUrl: '/tech-icons/aws.svg' },
+    { name: 'C#', iconUrl: '/tech-icons/c-sharp.svg' },
+    { name: 'Docker', iconUrl: '/tech-icons/docker-icon.svg' },
+    { name: '.NET', iconUrl: '/tech-icons/dotnet.svg' },
+    { name: 'FastAPI', iconUrl: '/tech-icons/fastapi-icon.svg' },
+    { name: 'Flask', iconUrl: '/tech-icons/flask.svg' },
+    { name: 'Google Cloud', iconUrl: '/tech-icons/google-cloud.svg' },
+    { name: 'Hadoop', iconUrl: '/tech-icons/hadoop.svg' },
+    { name: 'Heroku', iconUrl: '/tech-icons/heroku-icon.svg' },
+    { name: 'JavaScript', iconUrl: '/tech-icons/javascript.svg' },
+    { name: 'Jupyter', iconUrl: '/tech-icons/jupyter.svg' },
+    { name: 'Kafka', iconUrl: '/tech-icons/kafka-icon.svg' },
+    { name: 'Kubernetes', iconUrl: '/tech-icons/kubernetes.svg' },
+    { name: 'Matplotlib', iconUrl: '/tech-icons/matplotlib-icon.svg' },
+    { name: 'Microsoft Azure', iconUrl: '/tech-icons/microsoft-azure.svg' },
+    { name: 'MongoDB', iconUrl: '/tech-icons/mongodb-icon.svg' },
+    { name: 'MySQL', iconUrl: '/tech-icons/mysql.svg' },
+    { name: 'Next.js', iconUrl: '/tech-icons/nextjs-icon.svg' },
+    { name: 'Node.js', iconUrl: '/tech-icons/nodejs.svg' },
+    { name: 'Oracle', iconUrl: '/tech-icons/oracle.svg' },
+    { name: 'PostgreSQL', iconUrl: '/tech-icons/postgresql.svg' },
+    { name: 'Python', iconUrl: '/tech-icons/python.svg' },
+    { name: 'PyTorch', iconUrl: '/tech-icons/pytorch-icon.svg' },
+    { name: 'React', iconUrl: '/tech-icons/react.svg' },
+    { name: 'Seaborn', iconUrl: '/tech-icons/seaborn-icon.svg' },
+    { name: 'TensorFlow', iconUrl: '/tech-icons/tensorflow.svg' },
+    { name: 'TypeScript', iconUrl: '/tech-icons/typescript-icon.svg' },
+    { name: 'WordPress', iconUrl: '/tech-icons/wordpress-icon.svg' },
+    { name: 'GraphQL', iconUrl: '/tech-icons/graphql.svg' },
+    { name: 'Scikit-learn', iconUrl: '/tech-icons/scikit-learn.svg' },
+
+
   ];
 
   return (
-    <div className="backdrop-blur-md bg-white/20 dark:bg-black/20 rounded-3xl p-4 shadow-xl border border-white/30 dark:border-white/10 hover:shadow-2xl transition-all duration-300 w-full">
-      <div className="flex items-center justify-center mb-3">
-        <div className="w-3 h-3 bg-gray-400 dark:bg-gray-500 rounded-full"></div>
-      </div>
-      
-      <div className="flex justify-center gap-2 mb-3 flex-wrap">
+    <div className="w-full p-4"> 
+      <div className="flex flex-wrap gap-4 justify-center items-center">
         {technologies.map((tech, index) => (
           <div 
             key={index}
-            className={`w-12 h-12 ${tech.color} rounded-lg flex items-center justify-center ${tech.textColor} font-bold text-sm shadow-lg`}
+            title={tech.name} // Add title for tooltip on hover
+            className={`w-12 h-12 rounded-lg flex items-center justify-center p-1 shadow-md transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_5px_rgba(255,255,255,0.7)]`}
           >
-            {tech.name}
+            <img src={tech.iconUrl} alt={tech.name} className="w-full h-full object-contain" />
           </div>
         ))}
-      </div>
-      
-      <div className="text-center">
-        <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">CURRENTLY USING</div>
-        <div className="text-sm font-bold text-gray-800 dark:text-gray-100">TECH I ❤️</div>
       </div>
     </div>
   );
