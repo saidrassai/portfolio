@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>"Portfolio Website"</title>
+    <meta name="description" content="Portfolio Website" />
+    <meta name="author" content="RASS.AI" />
+    <script>
+      // Initialize dark mode based on local storage or system preference
+      (function() {
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+
+    <meta property="og:title" content="Portfolio Website" />
+    <meta property="og:description" content="Portfolio Website" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/public/vite.svg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@your_twitter" />
+    <meta name="twitter:image" content="/public/vite.svg" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <!-- Root element for React app -->
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
